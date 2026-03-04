@@ -13,7 +13,7 @@ __pycache__/
 .venv/
 venv/
 
-# Environment — NEVER commit your API key
+# Environment
 .env
 
 # OS junk
@@ -26,7 +26,8 @@ Thumbs.db
 
 # Reports output (generated at runtime, not source)
 reports/*.json
-!reports/sample.json    ← this exception keeps your hand-written sample
+!reports/sample.json
+
 
 # CMake generated
 CMakeCache.txt
