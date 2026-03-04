@@ -1,0 +1,42 @@
+final_build_plan.md
+taskgraph_sentinel_master_doc.md
+verification_sources.md
+
+# Build artifacts
+build/
+bin/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Environment — NEVER commit your API key
+.env
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# IDE configs (optional — some prefer committing these)
+.vscode/
+.idea/
+
+# Reports output (generated at runtime, not source)
+reports/*.json
+!reports/sample.json    ← this exception keeps your hand-written sample
+
+# CMake generated
+CMakeCache.txt
+CMakeFiles/
+Makefile
+*.cmake
+
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+*.dSYM/
