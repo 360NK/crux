@@ -1,0 +1,12 @@
+{
+  "name": "ETL Pipeline",
+  "num_workers": 2,
+  "tasks": [
+    { "id": "ingest", "duration_ms": 200, "deps": [] },
+    { "id": "validate", "duration_ms": 150, "deps": ["ingest"] },
+    { "id": "transform", "duration_ms": 300, "deps": ["ingest"] },
+    { "id": "enrich", "duration_ms": 250, "deps": ["validate"] },
+    { "id": "merge", "duration_ms": 100, "deps": ["transform", "enrich"] },
+    { "id": "load", "duration_ms": 50, "deps": ["merge"] }
+  ]
+}

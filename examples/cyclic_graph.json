@@ -1,0 +1,9 @@
+{
+  "name": "Bad Pipeline",
+  "num_workers": 2,
+  "tasks": [
+    { "id": "A", "duration_ms": 100, "deps": ["C"] },
+    { "id": "B", "duration_ms": 100, "deps": ["A"] },
+    { "id": "C", "duration_ms": 100, "deps": ["B"] }
+  ]
+}
