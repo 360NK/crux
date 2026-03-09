@@ -2,7 +2,10 @@
 include_directories(include src)
 
 # The core engine library
-add_library(crux_core src/graph.cpp)
+add_library(crux_core src/graph.cpp src/scheduler.cpp)
+
+add_executable(crux src/main.cpp)
+target_link_libraries(crux crux_core)
 
 # The Day 1 Test Executable
 add_executable(test_graph tests/test_graph.cpp)
