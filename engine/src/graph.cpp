@@ -52,7 +52,7 @@ bool load_graph(const std::string& path, TaskGraph& out, std::string& err) {
         return false;
     }
 
-    out.name = j.value("graph_name", "UnnamedGraph");
+    out.name = j.value("name", "UnnamedGraph");
     out.num_workers = j.value("num_workers", 1);
 
     int current_index = 0;
