@@ -1,27 +1,33 @@
-# Crux — DAG Task Scheduler with AI Bottleneck Analysis
+# Crux
 
-A C++17 parallel task scheduler that models workflows as directed acyclic
-graphs, executes them across a thread pool, and produces a structured
-execution report. A Python AI agent then reads the report and explains
-bottlenecks in plain English using Anthropic's tool-calling API.
+Crux is a C++17 DAG scheduling project built to explore how dependency graphs can be parsed, validated, analyzed and prepared for execution.
 
-Built from scratch as a deep dive into graph algorithms, concurrent systems,
-and AI integration.
+The current implementation focuses on:
+- parsing task graphs from JSON
+- validating acyclicity using Kahn’s algorithm
+- building dependency and successor relationships
+- computing critical path information with dynamic programming
+- producing structured execution and analysis output
 
+This project is part of my broader interest in runtimes, schedulers, and performance-oriented backend systems.
 ---
 
-## Current Status
+## Current status
 
-| Component | Status |
-|---|---|
-| JSON graph loading + Kahn's topological sort | Done |
-| Cycle detection | Done |
-| Sequential scheduler | Done |
-| Execution records (per-task timestamps) | Done |
-| Reporter (JSON output) | Not started |
-| Critical path analyzer | Not started |
-| Parallel scheduler + thread pool | Not started |
-| Python AI agent | Not started |
+Implemented:
+- JSON graph parsing
+- dependency graph construction
+- indegree tracking
+- topological validation with Kahn’s algorithm
+- critical path analysis
+- structured reporting / analysis components
+
+Planned / future work:
+- parallel task execution
+- thread-pool based scheduling
+- richer runtime metrics
+- stronger benchmarking
+- optional AI-assisted report interpretation
 
 ---
 
@@ -50,15 +56,15 @@ load — 55ms
 
 ---
 
-## What It Will Do
+## Why this project exists
 
-- Parses JSON task graphs and validates them for cycles using Kahn's algorithm
-- Computes the critical path using dynamic programming on the DAG
-- Executes tasks in dependency order across a configurable thread pool
-- Measures per-task wait times, worker utilization, and parallelism efficiency
-- Generates a structured JSON execution report
-- Feeds the report to an AI agent that calls structured tools to explain
-  which tasks caused delays and why
+I built Crux to better understand the mechanics behind graph-based execution systems:
+- how DAG workloads are represented
+- how dependency order is enforced
+- how critical work can be identified
+- how runtime design choices affect execution behavior
+
+It is a learning and systems-design project, not just a finished end-user tool.
 
 ---
 
