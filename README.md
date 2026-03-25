@@ -4,7 +4,7 @@ Crux is a C++17 DAG scheduling project built to explore how dependency graphs ca
 
 The current implementation focuses on:
 - parsing task graphs from JSON
-- validating acyclicity using Kahn’s algorithm
+- validating acyclicity using Kahn's algorithm
 - building dependency and successor relationships
 - computing critical path information with dynamic programming
 - producing structured execution and analysis output
@@ -18,7 +18,7 @@ Implemented:
 - JSON graph parsing
 - dependency graph construction
 - indegree tracking
-- topological validation with Kahn’s algorithm
+- topological validation with Kahn's algorithm
 - critical path analysis
 - structured reporting / analysis components
 
@@ -26,48 +26,6 @@ Planned / future work:
 - parallel task execution
 - thread-pool based scheduling
 - richer runtime metrics
-- stronger benchmarking
-- optional AI-assisted report interpretation
+- benchmark comparisons across graph shapes (chain, diamond, fan-out)
 
----
-
-## Build
-
-```bash
-cmake -S . -B build
-cmake --build build
-```
-
-## Run
-
-```bash
-cd build/engine && ./crux
-```
-
-Example output:
-```
-ingest — 200ms
-validate — 155ms
-transform — 303ms
-enrich — 250ms
-merge — 103ms
-load — 55ms
-```
-
----
-
-## Why this project exists
-
-I built Crux to better understand the mechanics behind graph-based execution systems:
-- how DAG workloads are represented
-- how dependency order is enforced
-- how critical work can be identified
-- how runtime design choices affect execution behavior
-
-It is a learning and systems-design project, not just a finished end-user tool.
-
----
-
-## License
-
-MIT — see [LICENSE](LICENSE)
+Note: `num_workers` is parsed from the graph JSON but parallel execution is not yet implemented. All tasks currently run sequentially on worker 0.
