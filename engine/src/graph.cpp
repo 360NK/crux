@@ -76,7 +76,7 @@ bool load_graph(const std::string& path, TaskGraph& out, std::string& err) {
         if (item.contains("deps")) {
             for (const auto& dep_id : item["deps"]) {
                 if (out.id_to_index.find(dep_id) == out.id_to_index.end()) {
-                    err = "Unknown dpendency ID: " + dep_id.get<std::string>();
+                    err = "Unknown dependency ID: " + dep_id.get<std::string>();
                     return false;
                 }
                 int dep_idx = out.id_to_index[dep_id];
