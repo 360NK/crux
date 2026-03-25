@@ -34,11 +34,6 @@ int main(int argc, char* argv[]) {
     std::filesystem::create_directories("reports");
     write_report(g, records, report, wall_time_ms, output_path);
     std::cout << "Report written to " << output_path << "\n";
-    // for (auto& r : records) {
-    //     auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(
-    //         r.end_time - r.start_time).count();
-    //     std::cout << g.nodes[r.task_index].id << " — " << ms << "ms\n";
-    // }
 
     return 0;
 }
