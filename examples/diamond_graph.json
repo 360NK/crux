@@ -1,0 +1,10 @@
+{
+  "name": "DiamondGraph",
+  "num_workers": 1,
+  "tasks": [
+    { "id": "source", "duration_ms": 100, "deps": [] },
+    { "id": "left",   "duration_ms": 200, "deps": ["source"] },
+    { "id": "right",  "duration_ms": 150, "deps": ["source"] },
+    { "id": "sink",   "duration_ms": 100, "deps": ["left", "right"] }
+  ]
+}
