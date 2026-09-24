@@ -53,7 +53,7 @@ AnalysisReport analyze(const TaskGraph& g, const std::vector<ExecutionRecord>& r
                 }
             }
             auto diff = std::chrono::duration_cast<std::chrono::milliseconds>(records[i].start_time - latest_pred_end).count();
-            tasks[i].wait_time_ms = std::max(0LL, diff);
+            tasks[i].wait_time_ms = std::max<long long>(0, diff);
         }
     }
     return AnalysisReport{cp_path, cp_ms, tasks};
