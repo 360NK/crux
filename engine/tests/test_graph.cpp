@@ -12,6 +12,8 @@ static void check(bool cond, const char* what) {
 }
 
 int main() {
+    const std::string examples = CRUX_EXAMPLES_DIR;
+    
     TaskGraph g;
     std::string err;
 
